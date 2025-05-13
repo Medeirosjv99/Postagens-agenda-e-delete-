@@ -1,0 +1,18 @@
+<h1> Lista de Postagens</h1>
+
+<a href="/cad" style="display: inline-block; margin-bottom: 20px; padding: 10px 15px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">
+     Nova Postagem
+</a>
+
+{{#if posts.length}}
+    {{#each posts}}
+        <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
+            <h2>{{titulo}}</h2>
+            <p>{{conteudo}}</p>
+            <small>Criado em: {{createdAt}}</small>
+            <a href="/deletar/{{id}}"><button>Deletar</button></a>
+        </div>
+    {{/each}}
+{{else}}
+    <p>Nenhuma postagem encontrada.</p>
+{{/if}}
